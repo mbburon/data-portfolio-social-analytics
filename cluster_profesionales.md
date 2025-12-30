@@ -118,3 +118,4 @@ plt.show()
 cluster_summary = df.groupby("cluster")[X.columns].mean()
 print(cluster_summary)
 
+https://raw.githubusercontent.com/mbburon/data-portfolio-social-analytics/main/IMAGENES/Metodo_codo_c1.png
