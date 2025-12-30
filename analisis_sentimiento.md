@@ -196,7 +196,8 @@ order to load all the package's dependencies. You can do this by selecting the
 'Restart kernel' or 'Restart runtime' option.
 ```
 
-![Nube de palabras](https://raw.githubusercontent.com/mbburon/data-portfolio-social-analytics/bed834b0a8a03f36b7d4c4f7cb3743024861de4d/IMAGENES/nube_palabras.png)
+![Nube de palabras](https://github.com/mbburon/data-portfolio-social-analytics/blob/1bc928c34a19bd50fdf7b13e9bd8ac511273015b/IMAGENES/nube_palabras.png)
+
 
 ```python
 Nube guardada como 'nube_palabras.png'
