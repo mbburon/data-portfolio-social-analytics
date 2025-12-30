@@ -164,7 +164,7 @@ Primeras filas del archivo:
 Columnas numéricas que se usarán para clustering:
 Index(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11'], dtype='object')
 
-![Clusters 3D](IMAGENES/Método codo c1.png)
+[![Clusters 3D](IMAGENES/Método codo c1.png)](https://github.com/mbburon/data-portfolio-social-analytics/blob/main/IMAGENES/M%C3%A9todo%20codo%20c1.png)
 
 
 Promedio de cada ítem por cluster:
