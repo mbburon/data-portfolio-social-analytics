@@ -164,6 +164,9 @@ Primeras filas del archivo:
 Columnas numéricas que se usarán para clustering:
 Index(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11'], dtype='object')
 
+![Clusters 3D](IMAGENES/Método codo c1.png)
+
+
 Promedio de cada ítem por cluster:
                p1        p2        p3        p4        p5        p6        p7  \
 Cluster                                                                         
