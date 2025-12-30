@@ -63,8 +63,6 @@ def cargar_modelo_spacy():
         import spacy.cli
         spacy.cli.download("es_core_news_sm")
         return spacy.load("es_core_news_sm")
-
-
 nlp = cargar_modelo_spacy()
 ```
 # Stopwords
@@ -91,7 +89,6 @@ def normalizar_texto(texto: str) -> str:
     texto = texto.lower()
     texto = re.sub(r"\s+", " ", texto)
     return texto.strip()
-
 
 def lematizar_y_filtrar(texto: str) -> list[str]:
     doc = nlp(normalizar_texto(texto))
@@ -135,8 +132,7 @@ def clasificar_sentimiento(texto: str) -> str:
 def main():
     
     1. Cargar datos
-    
-    df = pd.read_excel(RUTA_ARCHIVO)
+        df = pd.read_excel(RUTA_ARCHIVO)
 
     comentarios = (
         df[COLUMNA_TEXTO]
@@ -146,20 +142,16 @@ def main():
     comentarios = comentarios[comentarios != ""]
 ```
     2. Tokenización y lematización
-  
-```python
+  ```python
     tokens_totales = []
     for texto in comentarios:
         tokens_totales.extend(lematizar_y_filtrar(texto))
 ```
     3. Frecuencias
-    
-```python
-    
-    frecuencias = Counter(tokens_totales)
+    ```python
+        frecuencias = Counter(tokens_totales)
     freq_top = dict(frecuencias.most_common(TOP_N))
 ```
-  
     4. Nube de palabras
 ```python   
     wc = WordCloud(
@@ -178,7 +170,6 @@ def main():
     wc.to_file(ARCHIVO_SALIDA)
     print(f"Nube guardada como '{ARCHIVO_SALIDA}'")
 ```
-    
     5. Sentimiento
 ```python
     df["Sentimiento"] = comentarios.apply(clasificar_sentimiento)
@@ -192,17 +183,13 @@ def main():
     print("\n Porcentajes:")
     print(porcentajes.astype(str) + "%")
 ```
-
-
 # Ejecución
 
 ```python
 if __name__ == "__main__":
     main()
 ```
-
 # Resultados
-
 ```python
 ✔ Download and installation successful
 You can now load the package via spacy.load('es_core_news_sm')
