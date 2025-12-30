@@ -1,3 +1,7 @@
+# Análisis de Sentimiento
+
+# Contexto del problema
+
 Análisis de texto en español:
 - Limpieza y lematización con spaCy
 - Nube de palabras (WordCloud)
