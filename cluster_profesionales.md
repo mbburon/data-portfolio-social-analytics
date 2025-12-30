@@ -119,12 +119,4 @@ cluster_summary = df.groupby("cluster")[X.columns].mean()
 print(cluster_summary)
 ```
 
-![Método del codo](IMAGENES/metodo_codo_c1.png)
-
-
-
-
-
-
-
-
+![Método del codo](IMAGENES/Método codo c1.png)
