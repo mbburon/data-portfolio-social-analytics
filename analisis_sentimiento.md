@@ -3,7 +3,7 @@
 
 # Contexto del problema
 
-Este análisis surge de la necesidad de pesquisar necesidades formativas en un grupo de profesionales que se desempeñan en una institución social.
+Este análisis surge de la necesidad de pesquisar necesidades formativas en un grupo de profesionales que se desempeñan en una institución educativa
 
 Se dispone de una pregunta abierta ingresada en un cuestionario, a la cual responden 120 personas variando la extensión de la respuesta entre los 0 y 550 caracteres. 
 
