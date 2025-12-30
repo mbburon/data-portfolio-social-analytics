@@ -1,15 +1,36 @@
-# Análisis de Clustering – Segmentación Social
+# Análisis de Clustering
+# Contexto del problema
 
-## 1. Objetivo
+Este análisis surge de la necesidad de pesquisar necesidades formativas en un grupo de profesionales que se desempeñan en una institución social.
 
-El objetivo de este análisis es identificar **perfiles o grupos homogéneos** dentro de la base de datos utilizando técnicas de *clustering no supervisado*.  
-Se busca explorar patrones latentes que permitan caracterizar distintos tipos de sujetos según sus variables sociales.
+Se dispone de 11 ítems evaluativos cuantitativos, a partir de los cuales se busca clasificar a los sujetos en grupos homogéneos, con el objetivo de identificar distintos niveles de requerimiento formativo y apoyar la toma de decisiones institucionales.
+
+El enfoque corresponde a un análisis de clustering no supervisado, combinando exploración estadística y técnicas de Machine Learning aplicadas al perfilamiento social
+
+
+## 1. Objetivos
+
+# Objetivo general
+
+Identificar perfiles o grupos homogéneos explorando patrones latentes para caracterizar distintos tipos de sujetos según evaluación de competencias
+
+# Objetivos específicos
+
+- Identificar perfiles diferenciados de profesionales según puntajes evaluativos  
+- Priorizar necesidades formativas de manera objetiva  
+- Generar insumos cuantitativos para la planificación institucional  
 
 ---
 
 ## 2. Metodología
 
-Se aplicó el algoritmo **K-Means**, siguiendo los pasos clásicos:
+Se utilizó K-means por tratarse de un problema de perfilamiento de sujetos a partir de variables cuantitativas continuas previamente escaladas, donde el objetivo principal es identificar grupos internamente homogéneos y comparables entre sí.
+
+El algoritmo resulta adecuado en este contexto por su simplicidad, eficiencia computacional e interpretabilidad, permitiendo caracterizar cada cluster mediante el promedio de los ítems evaluativos, lo que facilita la traducción de los resultados en insumos operativos para la toma de decisiones (por ejemplo, detección de necesidades formativas diferenciadas).
+
+La selección del número de clusters fue respaldada mediante el método del codo y contrastada con un análisis jerárquico exploratorio, evitando decisiones arbitrarias y fortaleciendo la validez del análisis.
+
+A continuación se siguieron los pasos clásicos:
 
 1. Estandarización de variables
 2. Determinación del número óptimo de clusters (método del codo)
@@ -32,7 +53,7 @@ from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 
 # -----------------------------
-# 1. Cargar datos
+# Cargar datos
 # -----------------------------
 df = pd.read_csv("data.csv")
 
@@ -40,14 +61,17 @@ df = pd.read_csv("data.csv")
 X = df.select_dtypes(include=[np.number])
 
 # -----------------------------
-# 2. Estandarización
+# Estandarización
 # -----------------------------
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
 # -----------------------------
-# 3. Método del codo
+# Método del codo
 # -----------------------------
+
+El método del codo sugiere una solución parsimoniosa, equilibrando simplicidad del modelo e interpretabilidad de los resultados
+
 inertia = []
 
 for k in range(1, 11):
@@ -68,7 +92,7 @@ plt.tight_layout()
 plt.show()
 
 # -----------------------------
-# 4. Modelo final K-Means
+# Modelo final K-Means
 # -----------------------------
 kmeans_final = KMeans(
     n_clusters=3,
@@ -80,7 +104,7 @@ clusters = kmeans_final.fit_predict(X_scaled)
 df["cluster"] = clusters
 
 # -----------------------------
-# 5. PCA para visualización
+# PCA para visualización
 # -----------------------------
 pca = PCA(n_components=3)
 X_pca = pca.fit_transform(X_scaled)
@@ -90,7 +114,7 @@ df["PC2"] = X_pca[:, 1]
 df["PC3"] = X_pca[:, 2]
 
 # -----------------------------
-# 6. Visualización PCA
+# Visualización PCA
 # -----------------------------
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_subplot(111, projection="3d")
@@ -113,12 +137,12 @@ plt.tight_layout()
 plt.show()
 
 # -----------------------------
-# 7. Resumen descriptivo por cluster
+# Resumen descriptivo por cluster
 # -----------------------------
 cluster_summary = df.groupby("cluster")[X.columns].mean()
 print(cluster_summary)
 ```
-# Resultados
+# 4. Resultados
 ```python
 Primeras filas del archivo:
      ID           Nombre       Sexo    Centro        Cargo   p1   p2   p3  \
@@ -164,7 +188,7 @@ Name: count, dtype: int64
 Archivo guardado: /CLUSTER_JJ_con_clusters.xlsx
 ```
 
-# Gráficos
+# 5. Gráficos
 
 # Método del codo
 ![Método del codo](https://raw.githubusercontent.com/mbburon/data-portfolio-social-analytics/bed834b0a8a03f36b7d4c4f7cb3743024861de4d/IMAGENES/metodo_codo_c1.png)
@@ -174,5 +198,21 @@ Archivo guardado: /CLUSTER_JJ_con_clusters.xlsx
 
 # Clusters
 ![Cluster3D](https://raw.githubusercontent.com/mbburon/data-portfolio-social-analytics/bed834b0a8a03f36b7d4c4f7cb3743024861de4d/IMAGENES/clusters_3D_c1.png)
+
+# Interpretación
+
+El análisis de clustering no supervisado permitió identificar tres grupos diferenciados de profesionales, con patrones consistentes de desempeño en los ítems evaluativos, lo que sugiere niveles distintos de necesidad formativa
+
+Cluster 1: Bajo nivel de dominio – Alta necesidad formativa
+
+Este grupo presenta los promedios más bajos en la mayoría de los ítems evaluados, lo que indica brechas formativas transversales. Los profesionales de este cluster requieren reforzamiento general de contenidos, priorizando la adquisición de conocimientos básicos y el desarrollo de competencias fundamentales asociadas a su rol. Se recomienda implementar instancias formativas estructuradas, con foco en nivelación y acompañamiento.
+
+Cluster 2: Nivel intermedio – Necesidad formativa focalizada
+
+Los profesionales de este grupo muestran desempeños intermedios, con fortalezas en algunos ítems y debilidades en otros. Esto sugiere la necesidad de acciones formativas selectivas, orientadas a reforzar áreas específicas más que a una capacitación general. La estrategia recomendada es el diseño de módulos formativos diferenciados, ajustados a las brechas identificadas en cada dimensión evaluada
+
+Cluster 3: Alto nivel de dominio – Baja necesidad formativa
+
+Este cluster concentra a los profesionales con mayores puntajes promedio en casi todos los ítems, lo que refleja un alto nivel de dominio de los contenidos evaluados. En este caso, las necesidades formativas son bajas y se orientan más bien a actualización, profundización o especialización, así como al fortalecimiento de roles de apoyo, mentoría o transferencia de conocimientos hacia otros equipos
 
 
