@@ -1,14 +1,26 @@
 # Análisis de Sentimiento
 
+
 # Contexto del problema
+
+Este análisis surge de la necesidad de pesquisar necesidades formativas en un grupo de profesionales que se desempeñan en una institución social.
+
+Se dispone de una pregunta abierta ingresada en un cuestionario, a la cual responden 120 personas variando la extensión de la respuesta entre los 0 y 550 caracteres. 
+
+Las alternativas son
+
+Trabajar desde el Paraigma Interpretativo de las Ciencias Sociales y categorizar las respuestas según temas emergentes realizando posteriormente un análisis temático transversal para interpretar el conjunto de respuestas
+
+Otra alternativa, según los objetivos de la pregunta realizada, se puede revisar las palabras cuantitativamente según su frecuencia de aparición, con el fin de pesquisar temas de interés en las respuestas. A la vez, la connotación de las respuestas puede ser obtenida mediante un análisis de sentimiento.
+
+Finalmente, se optó por el análisis cuantitativo de frecuencias y el análisis de sentimiento
+
+# Porcedimiento a realizar
 
 Análisis de texto en español:
 - Limpieza y lematización con spaCy
 - Nube de palabras (WordCloud)
 - Análisis básico de sentimiento
-
-Autor: Martín Burón
-Perfil: Sociología / Ciencia de Datos
 
 Requisitos:
 - pandas
@@ -19,7 +31,7 @@ Requisitos:
 - openpyxl
 
 
-# Librerías
+# Importación de librerías
 
 ```python
 import pandas as pd
