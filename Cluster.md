@@ -144,3 +144,48 @@ plt.show()
 df.to_excel('/CLUSTER_JJ_con_clusters.xlsx', index=False)
 print("\nArchivo guardado: /CLUSTER_JJ_con_clusters.xlsx")
 ```
+# Resultados
+```python
+Primeras filas del archivo:
+     ID           Nombre       Sexo    Centro        Cargo   p1   p2   p3  \
+0  1189    Profesional 4   Femenino  Centro 1  Categoría 1  0.6  0.6  0.8   
+1  1890   Profesional 97  Masculino  Centro 2  Categoría 1  0.8  0.6  0.8   
+2  1440  Profesional 102   Femenino  Centro 3  Categoría 1  0.4  0.6  0.6   
+3  1344   Profesional 27   Femenino  Centro 1  Categoría 2  0.8  1.0  0.6   
+4  1966   Profesional 31   Femenino  Centro 1  Categoría 2  0.8  0.8  0.8   
+
+    p4   p5   p6   p7   p8   p9  p10  p11  
+0  0.6  0.8  0.6  0.6  0.6  0.6  0.6  0.6  
+1  0.6  0.6  0.6  0.6  0.8  0.6  1.0  0.8  
+2  0.6  0.4  0.8  0.8  0.8  0.6  0.8  0.8  
+3  1.0  1.0  0.6  0.8  1.0  0.8  0.6  0.8  
+4  0.8  0.8  0.6  0.8  0.8  0.6  0.8  0.8  
+
+Columnas numéricas que se usarán para clustering:
+Index(['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8', 'p9', 'p10', 'p11'], dtype='object')
+
+
+
+Promedio de cada ítem por cluster:
+               p1        p2        p3        p4        p5        p6        p7  \
+Cluster                                                                         
+0        0.774468  0.753191  0.689362  0.697872  0.791489  0.676596  0.761702   
+1        0.939130  0.860870  0.808696  0.834783  0.843478  0.826087  0.878261   
+2        0.630303  0.600000  0.539394  0.587879  0.630303  0.593939  0.703030   
+
+               p8        p9       p10       p11  
+Cluster                                          
+0        0.782979  0.663830  0.685106  0.778723  
+1        0.895652  0.808696  0.939130  0.886957  
+2        0.660606  0.587879  0.600000  0.666667  
+
+Cantidad de personas por cluster:
+Cluster
+0    47
+2    33
+1    23
+Name: count, dtype: int64
+
+
+Archivo guardado: /CLUSTER_JJ_con_clusters.xlsx
+```
