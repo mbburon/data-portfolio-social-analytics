@@ -5,16 +5,16 @@ Este análisis surge de la necesidad de pesquisar necesidades formativas en un g
 
 Se dispone de 11 ítems evaluativos cuantitativos, a partir de los cuales se busca clasificar a los sujetos en grupos homogéneos, con el objetivo de identificar distintos niveles de requerimiento formativo y apoyar la toma de decisiones institucionales.
 
-El enfoque corresponde a un análisis de clustering no supervisado, combinando exploración estadística y técnicas de Machine Learning aplicadas al perfilamiento social
+El enfoque corresponde a un análisis de clustering no supervisado, combinando exploración estadística y técnicas de Machine Learning aplicadas al perfilamiento profesional
 
 
 ## 1. Objetivos
 
-# Objetivo general
+## Objetivo general
 
 Identificar perfiles o grupos homogéneos explorando patrones latentes para caracterizar distintos tipos de sujetos según evaluación de competencias
 
-# Objetivos específicos
+## Objetivos específicos
 
 - Identificar perfiles diferenciados de profesionales según puntajes evaluativos  
 - Priorizar necesidades formativas de manera objetiva  
@@ -32,7 +32,7 @@ La selección del número de clusters fue respaldada mediante el método del cod
 
 A continuación se siguieron los pasos clásicos:
 
-1. Estandarización de variables
+1. Estandarización de variables (puntaje Z)
 2. Determinación del número óptimo de clusters (método del codo)
 3. Ajuste del modelo K-Means
 4. Reducción de dimensionalidad mediante PCA
