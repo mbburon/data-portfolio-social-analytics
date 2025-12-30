@@ -37,7 +37,7 @@ ALLOWED_POS = {"NOUN", "VERB", "ADJ", "PROPN"}
 
 ARCHIVO_SALIDA = "nube_palabras.png"
 ```
-# Carga del midelo spaCy (ES)
+# Carga del modelo spaCy (ES)
 
 ```python
 def cargar_modelo_spacy():
@@ -183,4 +183,36 @@ def main():
 ```python
 if __name__ == "__main__":
     main()
+```
+
+# Resultados
+
+```python
+✔ Download and installation successful
+You can now load the package via spacy.load('es_core_news_sm')
+⚠ Restart to reload dependencies
+If you are in a Jupyter or Colab notebook, you may need to restart Python in
+order to load all the package's dependencies. You can do this by selecting the
+'Restart kernel' or 'Restart runtime' option.
+```
+
+
+
+
+```python
+Nube guardada como 'nube_palabras.png'
+
+Distribución de sentimientos:
+Sentimiento
+Neutro      90
+Positivo    11
+Negativo     2
+Name: count, dtype: int64
+
+Porcentajes:
+Sentimiento
+Neutro      87.4%
+Positivo    10.7%
+Negativo     1.9%
+Name: count, dtype: object
 ```
