@@ -5,13 +5,13 @@
 
 Este análisis surge de la necesidad de pesquisar necesidades formativas en un grupo de profesionales que se desempeñan en una institución educativa
 
-Se dispone de una pregunta abierta ingresada en un cuestionario, a la cual responden 120 personas variando la extensión de la respuesta entre los 0 y 550 caracteres. 
+Se dispone de las respuestas a una pregunta abierta de un cuestionario referida a necesidades formativas, a la cual responden 120 personas variando la extensión de la respuesta entre los 0 y 550 caracteres. 
 
-Las alternativas son
+Las alternativas de análisis son
 
 Trabajar desde el Paraigma Interpretativo de las Ciencias Sociales y categorizar las respuestas según temas emergentes realizando posteriormente un análisis temático transversal para interpretar el conjunto de respuestas
 
-Otra alternativa, según los objetivos de la pregunta realizada, se puede revisar las palabras cuantitativamente según su frecuencia de aparición, con el fin de pesquisar temas de interés en las respuestas. A la vez, la connotación de las respuestas puede ser obtenida mediante un análisis de sentimiento.
+Otra alternativa, según los objetivos de la pregunta realizada, es revisar las palabras cuantitativamente según su frecuencia de aparición, con el fin de pesquisar temas recurrentes que reflejen los intereses de los consultados. A la vez, la connotación emotiva de las respuestas puede ser obtenida mediante un análisis de sentimiento.
 
 Finalmente, se optó por el análisis cuantitativo de frecuencias y el análisis de sentimiento
 
@@ -232,3 +232,12 @@ Positivo    10.7%
 Negativo     1.9%
 Name: count, dtype: object
 ```
+# Interpretación de los resultados, nube de palabras y análisis de sentimiento
+
+El análisis cualitativo de los resultados, permite caracterizar el discurso de los participantes como principalmente técnico, descriptivo y orientado a la mejora de la intervención profesional
+
+La nube de palabras evidencia una alta frecuencia de términos como intervención, capacitación, trabajo, formación, proceso, estrategia, conocimiento, equipo y contexto, lo que indica que los comentarios se centran en necesidades formativas concretas, fortalecimiento de competencias y optimización de los procesos de intervención. La presencia de conceptos asociados a trayectoria, rol profesional, evaluación e interculturalidad sugiere además una reflexión situada, vinculada tanto a la práctica cotidiana como a la complejidad del contexto de intervención.
+
+Estos hallazgos se ven reforzados por el análisis de sentimiento, que muestra un predominio claro de comentarios neutrales (87,4%), junto con una proporción menor de comentarios positivos (10,7%) y una presencia marginal de comentarios negativos (1,9%). Esta distribución indica que el espacio de respuesta es utilizado mayoritariamente para formular observaciones técnicas, diagnósticos y propuestas, más que para expresar evaluaciones emocionales o juicios críticos.
+
+En conjunto, ambos análisis sugieren que los participantes adoptan una posición reflexiva y profesional, orientada a identificar brechas de capacitación y oportunidades de mejora, dentro de un clima discursivo más bien constructivo. La baja carga negativa y la presencia de términos asociados al aprendizaje y la mejora continua refuerzan la pertinencia de utilizar estos insumos como base para diseñar estrategias formativas diferenciadas y ajustadas a las necesidades reales del equipo
